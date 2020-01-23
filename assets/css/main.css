@@ -237,7 +237,6 @@ body > * {
 }
 @media screen and (max-width: 736px) {
   body {
-    padding: 5em 2em 2em 2em;
   }
 }
 @media screen and (max-width: 360px) {
@@ -310,6 +309,10 @@ body > * {
 }
 body.is-preload #bg {
   opacity: 0;
+}
+
+h2.landingtext {
+  line-height:8px;
 }
 
 @-moz-keyframes bg {
