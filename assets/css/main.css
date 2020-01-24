@@ -310,9 +310,27 @@ body > * {
 body.is-preload #bg {
   opacity: 0;
 }
-
+/* Our own CSS */
 h2.landingtext {
-  line-height:8px;
+  line-height: 8px;
+}
+
+section.container {
+  width: 90%;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+}
+
+div.one {
+  width: 50%;
+  height: auto;
+  float: left;
+}
+
+div.two {
+  margin-left: 15%;
+  height: auto;
 }
 
 @-moz-keyframes bg {
