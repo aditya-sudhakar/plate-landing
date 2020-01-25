@@ -310,13 +310,20 @@ body > * {
 body.is-preload #bg {
   opacity: 0;
 }
-/* Our own CSS */
+/* Our own CSS =============================================================================================*/
 h2.landingtext {
   line-height: 8px;
 }
 
+.responsive {
+  width: 50%;
+  max-width: 50%;
+  height: auto;
+  padding: 15px;
+}
+
 section.container {
-  width: 90%;
+  width: 100%;
   height: auto;
   margin: 0px;
   padding: 0px;
@@ -329,7 +336,7 @@ div.one {
 }
 
 div.two {
-  margin-left: 15%;
+  margin-left: 50%;
   height: auto;
 }
 
