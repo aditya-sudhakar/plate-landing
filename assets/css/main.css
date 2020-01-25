@@ -316,8 +316,7 @@ h2.landingtext {
 }
 
 .responsive {
-  width: 50%;
-  max-width: 50%;
+  max-width: 80%;
   height: auto;
   padding: 15px;
 }
