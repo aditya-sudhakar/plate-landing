@@ -320,7 +320,7 @@ h2.landingtext {
   max-width: 50%;
   min-width: 30%;
   height: auto;
-  padding: 15px;
+  /* padding: 15px; */
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -334,7 +334,7 @@ h2.landingtext {
   grid-gap: 2em;
 }
 /* this is the desktop view */
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 770px) {
   #content {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
