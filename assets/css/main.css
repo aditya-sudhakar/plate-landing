@@ -190,13 +190,13 @@ body {
   overflow-x: hidden;
   width: 100%;
 }
-@media screen and (max-height: 640px) {
+/* @media screen and (max-height: 640px) {
   html,
   body {
     height: auto;
     min-height: 100%;
   }
-}
+} */
 
 body {
   display: -moz-flex;
@@ -207,10 +207,10 @@ body {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  -moz-justify-content: center;
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
-  justify-content: center;
+  /* -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center; */
   background-color: #000;
   padding: 6em 4em 4em 4em;
 }
@@ -227,16 +227,17 @@ body.is-preload *:after {
   transition: none !important;
 }
 body > * {
-  position: relative;
+  position: static;
   z-index: 2;
 }
 @media screen and (max-width: 1680px) {
   body {
-    padding: 6em 3.5em 3.5em 3.5em;
+    padding: 6em 4em 4em 4em;
   }
 }
 @media screen and (max-width: 736px) {
   body {
+    padding: 6em 4em 4em 4em;
   }
 }
 @media screen and (max-width: 360px) {
@@ -312,32 +313,64 @@ body.is-preload #bg {
 }
 /* Our own CSS =============================================================================================*/
 h2.landingtext {
-  line-height: 8px;
+  line-height: auto;
 }
 
 .responsive {
-  max-width: 80%;
+  max-width: 50%;
+  min-width: 30%;
   height: auto;
   padding: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-section.container {
-  width: 100%;
-  height: auto;
-  margin: 0px;
-  padding: 0px;
+/* This is the mobile view */
+#content {
+  display: grid;
+  grid-template-rows: 1fr;
+  align-items: center;
+  grid-gap: 2em;
 }
+/* this is the desktop view */
+@media screen and (min-width: 760px) {
+  #content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-areas:
+      "main main main"
+      "main main main";
+    align-items: center;
+    grid-gap: 2em;
+    grid-row-gap: 10em;
+  }
+  .one {
+    grid-column: 1;
+  }
+  .two {
+    grid-column: 2/4;
+  }
+  .three {
+    grid-column: 3;
+  }
+  .four {
+    text-align: left;
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .five {
+    text-align: left;
+    grid-column: 2 / 4;
+    grid-row: 2;
+  }
 
-div.one {
-  width: 50%;
-  height: auto;
-  float: left;
+  footer {
+    grid-area: myFooter;
+  }
 }
-
-div.two {
-  margin-left: 50%;
-  height: auto;
-}
+/* Our own CSS =============================================================================================*/
 
 @-moz-keyframes bg {
   0% {
@@ -491,7 +524,7 @@ h6 {
   color: #fff;
   font-weight: 700;
   line-height: 1em;
-  margin: 0 0 1em 0;
+  margin: 0 0 0.25em 0;
 }
 h1 a,
 h2 a,
@@ -706,7 +739,7 @@ ul.icons li a {
 
 /* Form */
 form {
-  margin: 0 0 2em 0;
+  margin: 2em 0 2em 0;
 }
 form .message {
   text-decoration: none;
@@ -1114,7 +1147,7 @@ button:disabled,
 
 @media screen and (max-width: 736px) {
   #header h1 {
-    font-size: 2em;
+    font-size: 3em;
   }
   #header p {
     font-size: 1em;
@@ -1182,7 +1215,10 @@ button:disabled,
   color: rgba(255, 255, 255, 0.5);
   left: 4em;
   opacity: 0.5;
-  position: absolute;
+  bottom: auto;
+  left: auto;
+  margin: 1em 0 0 0;
+  position: static;
 }
 #footer .icons {
   margin: 0 0 0.5em 0;
