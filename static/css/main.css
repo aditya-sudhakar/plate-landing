@@ -369,6 +369,7 @@ h2.landingtext {
 
   .six {
     grid-column: 1;
+    padding-left: 2em;
   }
 
   footer {
