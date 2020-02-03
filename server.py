@@ -4,6 +4,7 @@ import os.path
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
+from datetime import datetime
 
 # If modifying these scopes, delete the file token.pickle.
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets']
@@ -41,6 +42,7 @@ def authenticate():
 
 creds = authenticate()
 service = build('sheets', 'v4', credentials=creds)
+sheet = service.spreadsheets()
 
 # Call the Sheets API
 
@@ -49,20 +51,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
 
-
-@app.route('/preorder', methods=['POST', 'GET'])
-def preorder():
-    print("Form submitted")
-    email = request.form['email']
-    print(email)
-    sheet = service.spreadsheets()
+    dateTime = datetime.now()
+    dt_string = dateTime.strftime("%d/%m/%Y %H:%M:%S")
 
     values = [
         [
             # Cell values ...
-            email
+            dt_string, None, True
         ]
         # Additional rows ...
     ]
@@ -76,6 +72,36 @@ def preorder():
         print('{0} cells updated.'.format(result.get('updatedCells')))
     except:
         pass
+
+    return render_template('index.html')
+
+
+@app.route('/preorder', methods=['POST', 'GET'])
+def preorder():
+    print("Form submitted")
+    email = request.form['email']
+
+    if email:
+        dateTime = datetime.now()
+        dt_string = dateTime.strftime("%d/%m/%Y %H:%M:%S")
+
+        values = [
+            [
+                # Cell values ...
+                dt_string, email
+            ]
+            # Additional rows ...
+        ]
+        body = {
+            'values': values
+        }
+        try:
+            result = service.spreadsheets().values().append(
+                spreadsheetId=SAMPLE_SPREADSHEET_ID, range=SAMPLE_RANGE_NAME,
+                valueInputOption="USER_ENTERED", body=body).execute()
+            print('{0} cells updated.'.format(result.get('updatedCells')))
+        except:
+            pass
 
     # your code
     # return a response
