@@ -332,6 +332,7 @@ h2.landingtext {
   grid-template-rows: 1fr;
   align-items: center;
   grid-gap: 2em;
+  row-gap: 10em;
 }
 /* this is the desktop view */
 @media screen and (min-width: 770px) {
@@ -354,17 +355,16 @@ h2.landingtext {
     grid-column: 2/4;
   }
   .three {
-    grid-column: 3;
+    grid-column: 2/4;
   }
   .four {
-    text-align: left;
     grid-column: 1;
     grid-row: 2;
   }
   .five {
     text-align: left;
     grid-column: 2 / 4;
-    grid-row: 2;
+    grid-row: 3;
   }
 
   .six {
