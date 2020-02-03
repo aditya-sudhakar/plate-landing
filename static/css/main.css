@@ -348,6 +348,7 @@ h2.landingtext {
   }
   .one {
     grid-column: 1;
+    padding-left: 2em;
   }
   .two {
     grid-column: 2/4;

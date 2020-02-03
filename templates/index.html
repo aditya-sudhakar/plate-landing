@@ -25,21 +25,6 @@
           <h2 class="landingtext">you already work hard</h2>
           <h2>work smart.</h2>
         </header>
-        <!-- Signup Form -->
-        <form id="signup-form" method="post" action="{{url_for('preorder')}}">
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email Address"
-          />
-          <input type="submit" value="Pre-order for IOS" />
-        </form>
-        <img
-          src="{{url_for('static', filename='images/Works_With_Apple_Health.png')}}"
-          alt="Works_With_Apple_Health"
-          width="160px"
-        />
       </div>
 
       <img
@@ -57,6 +42,22 @@
         <h2 class="landingtext">
           Plate automatically keeps track of what you do.
         </h2>
+        <br />
+        <!-- Signup Form -->
+        <form id="signup-form" method="post" action="{{url_for('preorder')}}">
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email Address"
+          />
+          <input type="submit" value="Pre-order" />
+        </form>
+        <img
+          src="{{url_for('static', filename='images/Works_With_Apple_Health.png')}}"
+          alt="Works_With_Apple_Health"
+          width="160px"
+        />
       </div>
     </main>
 
@@ -79,8 +80,10 @@
 			>
 		  </li> -->
         <li>
-          <a href="#" class="icon fa-envelope"
-            ><span class="label">Email</span></a
+          <a
+            href="mailto:smartplate.app@gmail.com?Subject=Plate%20Inquiry"
+            class="icon fa-envelope"
+            ><span class="label">Email</span> &nbsp; &nbsp;Contact Us</a
           >
         </li>
       </ul>
