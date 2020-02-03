@@ -349,13 +349,16 @@ h2.landingtext {
   }
   .one {
     grid-column: 1;
+    grid-row: 1;
     padding-left: 2em;
   }
   .two {
     grid-column: 2/4;
+    grid-row: 1;
   }
   .three {
     grid-column: 2/4;
+    grid-row: 2;
   }
   .four {
     grid-column: 1;
@@ -370,6 +373,7 @@ h2.landingtext {
   .six {
     grid-column: 1;
     padding-left: 2em;
+    grid-row: 3;
   }
 
   footer {
